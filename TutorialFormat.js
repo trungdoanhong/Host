@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    var htmlSrc = $(".gcode-page").html();
+    var htmlSrc = $(".gcode-page").html() + "";
 
     var gcodeNameFormat = '<p class="gcode-name"><strong>gcode-name-key</strong> - gcode-title<br /></p>';
     var gcodeSubTitleFormat = '<p class="border rounded gcode-subTitle">gcode-subTitle-key<br /></p>';
