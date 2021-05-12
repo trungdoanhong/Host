@@ -1,0 +1,128 @@
+.gcode-page
+{
+    font-family: Abel, sans-serif;
+    padding-left: 30px;
+    padding-right: 30px; 
+} 
+
+.gcode-name
+{
+    font-size: 24px;
+    color: #005bbf;
+    margin-left: -20px;
+    margin-bottom: 0;
+}
+
+.gcode-subTitle 
+{
+    color: #ffffff;
+    margin-left: -10px;
+    padding-left: 10px;
+    background-color: #005bbf;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.description-text 
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.gcode-prefix
+{
+    background-color: #c1deff;
+    color: #005bbf;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+  
+.gcode-example 
+{
+    background-color: #efefef;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.gcode-cm 
+{
+    color: #007305;
+}
+
+.usage-text 
+{
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #c1deff;
+    font-size: 20px;
+}
+  
+.robot-tag
+{
+    color: rgb(255,255,255);
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+  
+.usage-parameter
+{
+    color: rgb(255,255,255);
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+}
+
+.gcode-parameter-panel 
+{
+    background-color: #ebebeb;
+    margin-bottom: 15px;
+}
+
+.gcode-parameter
+{
+    background-color: #c1deff;
+    color: rgb(0,91,191);
+}
+
+.gcode-note
+{
+    background-color: #006bb8;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.gcode-note-title
+{
+    padding-left: 6px;
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+.gcode-note-text
+{
+    color: rgb(255,255,255);
+    margin-bottom: 0px;
+}
+  
+  
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
