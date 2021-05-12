@@ -60,18 +60,18 @@ $(document).ready(function()
                 break;
 
             var replaceSection = src.substring(t1Pos, t2Pos + t2.length);
-            console.log(replaceSection);
+            //console.log(replaceSection);
             var valueInTag = replaceSection.substring(t1.length, replaceSection.length - t2.length);
-            console.log(valueInTag);
+            //console.log(valueInTag);
             var newFormatSection = rp.replace(key, valueInTag);
-            console.log(newFormatSection);
+            //console.log(newFormatSection);
             src = src.replace(replaceSection, newFormatSection);
             
             cursor1 = src.indexOf(t1, t2Pos);
             cursor2 = src.indexOf(t2, t2Pos);
         }        
         
-        console.log(src);
+        //console.log(src);
 
         return src;
     }
