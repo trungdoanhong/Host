@@ -1,46 +1,49 @@
 $(document).ready(function()
 {
-    var htmlSrc = $(".gcode-page").html() + "";
+    function FormatGcodePage(className)
+    {
+        var htmlSrc = $(className).html() + "";
 
-    var gcodeNameFormat = '<p class="gcode-name"><strong>gcode-name-key</strong> - gcode-title<br /></p>';
-    var gcodeSubTitleFormat = '<p class="border rounded gcode-subTitle">gcode-subTitle-key<br /></p>';
-    var gcodeDescriptionTextFormat = '<p class="description-text">gcode-description-text-key</p>'
-    var gcodePrefixFormat = '<span class="gcode-prefix">gcode-prefix-key</span>';
-    var gcodeExampleFormat = '<div class="border rounded gcode-example"><code class="text-primary">gcode-example-key</code></div>';
-    var gcodeCommentFormat = '<em class="gcode-cm">&nbsp;&nbsp;&nbsp;&nbsp;;gcode-cm-key<br></em>'
-    var gcodeUsageTextFormat = '<p class="border rounded-0 d-inline-block usage-text">usage-text-key</p>'
-    var gcodeRobotTag1Format = '<span class="bg-danger border rounded robot-tag">robot-tag-key</span>';
-    var gcodeRobotTag2Format = '<span class="bg-info border rounded robot-tag">robot-tag-key</span>';
-    var gcodeRobotTag3Format = '<span class="bg-dark border rounded robot-tag">robot-tag-key</span>';
-    var gcodeTagFormat = '<p class="bg-success border rounded d-inline-block usage-parameter">gcode-tag-key<br /></p>';
-    var gcodeParameterPanelFormat = '<div class="border rounded gcode-parameter-panel" style="padding-left: 14px;">gcode-parameter-panel-key</div>'
-    var gcodeTableFormat = '<div class="d-table"><table class="table table-sm"><tbody>gcode-table-key</tbody></table></div>';
-    var gcodeRowFormat = '<tr>gcode-row-key</tr>';
-    var gcodeCell1Format = '<td class="d-flex"><br /><p class="gcode-parameter">gcode-cell1-key<br /></p></td>';
-    var gcodeCell2Format = '<td>gcode-cell2-key<br /></td>';
-    var gcodeNoteFormat = '<div class="border rounded gcode-note"><p class="gcode-note-title" style="color: rgb(255,255,255);">Notes</p>gcode-note-key</div>';
-    var gcodeNoteLineFormat = '<p class="gcode-note-text">▶ gcode-note-line-key</p>';
-
-    htmlSrc = FormatDocument2(htmlSrc, "[gcode-name]", "[/gcode-name]", " - ", gcodeNameFormat, "gcode-name-key", "gcode-title");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-subTitle]", "[/gcode-subTitle]", gcodeSubTitleFormat, "gcode-subTitle-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[description-text]", "[/description-text]", gcodeDescriptionTextFormat, "gcode-description-text-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-prefix]", "[/gcode-prefix]", gcodePrefixFormat, "gcode-prefix-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-example]", "[/gcode-example]", gcodeExampleFormat, "gcode-example-key");
-    htmlSrc = FormatDocument1(htmlSrc, " ;", "<br>", gcodeCommentFormat, "gcode-cm-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-usage]", "[/gcode-usage]", gcodeUsageTextFormat, "usage-text-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-robot-tag1]", "[/gcode-robot-tag1]", gcodeRobotTag1Format, "robot-tag-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-robot-tag2]", "[/gcode-robot-tag2]", gcodeRobotTag2Format, "robot-tag-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-robot-tag3]", "[/gcode-robot-tag3]", gcodeRobotTag3Format, "robot-tag-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-tag]", "[/gcode-tag]", gcodeTagFormat, "gcode-tag-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-parameter-panel]", "[/gcode-parameter-panel]", gcodeParameterPanelFormat, "gcode-parameter-panel-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-table]", "[/gcode-table]", gcodeTableFormat, "gcode-table-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-row]", "[/gcode-row]", gcodeRowFormat, "gcode-row-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-cell1]", "[/gcode-cell1]", gcodeCell1Format, "gcode-cell1-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-cell2]", "[/gcode-cell2]", gcodeCell2Format, "gcode-cell2-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-note]", "[/gcode-note]", gcodeNoteFormat, "gcode-note-key");
-    htmlSrc = FormatDocument1(htmlSrc, "[gcode-note-line]", "[/gcode-note-line]", gcodeNoteLineFormat, "gcode-note-line-key");
-
-    $(".gcode-page").html(htmlSrc);
+        var gcodeNameFormat = '<p class="gcode-name"><strong>gcode-name-key</strong> - gcode-title<br /></p>';
+        var gcodeSubTitleFormat = '<p class="border rounded gcode-subTitle">gcode-subTitle-key<br /></p>';
+        var gcodeDescriptionTextFormat = '<p class="description-text">gcode-description-text-key</p>'
+        var gcodePrefixFormat = '<span class="gcode-prefix">gcode-prefix-key</span>';
+        var gcodeExampleFormat = '<div class="border rounded gcode-example"><code class="text-primary">gcode-example-key</code></div>';
+        var gcodeCommentFormat = '<em class="gcode-cm">&nbsp;&nbsp;&nbsp;&nbsp;;gcode-cm-key<br></em>'
+        var gcodeUsageTextFormat = '<p class="border rounded-0 d-inline-block usage-text">usage-text-key</p>'
+        var gcodeRobotTag1Format = '<span class="bg-danger border rounded robot-tag">robot-tag-key</span>';
+        var gcodeRobotTag2Format = '<span class="bg-info border rounded robot-tag">robot-tag-key</span>';
+        var gcodeRobotTag3Format = '<span class="bg-dark border rounded robot-tag">robot-tag-key</span>';
+        var gcodeTagFormat = '<p class="bg-success border rounded d-inline-block usage-parameter">gcode-tag-key<br /></p>';
+        var gcodeParameterPanelFormat = '<div class="border rounded gcode-parameter-panel" style="padding-left: 14px;">gcode-parameter-panel-key</div>'
+        var gcodeTableFormat = '<div class="d-table"><table class="table table-sm"><tbody>gcode-table-key</tbody></table></div>';
+        var gcodeRowFormat = '<tr>gcode-row-key</tr>';
+        var gcodeCell1Format = '<td class="d-flex"><br /><p class="gcode-parameter">gcode-cell1-key<br /></p></td>';
+        var gcodeCell2Format = '<td>gcode-cell2-key<br /></td>';
+        var gcodeNoteFormat = '<div class="border rounded gcode-note"><p class="gcode-note-title" style="color: rgb(255,255,255);">Notes</p>gcode-note-key</div>';
+        var gcodeNoteLineFormat = '<p class="gcode-note-text">▶ gcode-note-line-key</p>';
+    
+        htmlSrc = FormatDocument2(htmlSrc, "[gcode-name]", "[/gcode-name]", " - ", gcodeNameFormat, "gcode-name-key", "gcode-title");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-subTitle]", "[/gcode-subTitle]", gcodeSubTitleFormat, "gcode-subTitle-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[description-text]", "[/description-text]", gcodeDescriptionTextFormat, "gcode-description-text-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-prefix]", "[/gcode-prefix]", gcodePrefixFormat, "gcode-prefix-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-example]", "[/gcode-example]", gcodeExampleFormat, "gcode-example-key");
+        htmlSrc = FormatDocument1(htmlSrc, " ;", "<br>", gcodeCommentFormat, "gcode-cm-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-usage]", "[/gcode-usage]", gcodeUsageTextFormat, "usage-text-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-robot-tag1]", "[/gcode-robot-tag1]", gcodeRobotTag1Format, "robot-tag-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-robot-tag2]", "[/gcode-robot-tag2]", gcodeRobotTag2Format, "robot-tag-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-robot-tag3]", "[/gcode-robot-tag3]", gcodeRobotTag3Format, "robot-tag-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-tag]", "[/gcode-tag]", gcodeTagFormat, "gcode-tag-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-parameter-panel]", "[/gcode-parameter-panel]", gcodeParameterPanelFormat, "gcode-parameter-panel-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-table]", "[/gcode-table]", gcodeTableFormat, "gcode-table-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-row]", "[/gcode-row]", gcodeRowFormat, "gcode-row-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-cell1]", "[/gcode-cell1]", gcodeCell1Format, "gcode-cell1-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-cell2]", "[/gcode-cell2]", gcodeCell2Format, "gcode-cell2-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-note]", "[/gcode-note]", gcodeNoteFormat, "gcode-note-key");
+        htmlSrc = FormatDocument1(htmlSrc, "[gcode-note-line]", "[/gcode-note-line]", gcodeNoteLineFormat, "gcode-note-line-key");
+    
+        $(className).html(htmlSrc);
+    }    
 
     function FormatDocument1(src, t1, t2, rp, key)
     {
