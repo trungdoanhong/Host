@@ -3,6 +3,7 @@ function FormatGcodePage(className)
 {
     var htmlSrc = $(className).html() + "";
 
+    var gcodePageFormat = '<section class="gcode-page">gcode-page-key</section>'
     var gcodeNameFormat = '<p class="gcode-name"><strong>gcode-name-key</strong> - gcode-title<br /></p>';
     var gcodeSubTitleFormat = '<p class="border rounded gcode-subTitle">gcode-subTitle-key<br /></p>';
     var gcodeDescriptionTextFormat = '<p class="description-text">gcode-description-text-key</p>'
@@ -22,6 +23,7 @@ function FormatGcodePage(className)
     var gcodeNoteFormat = '<div class="border rounded gcode-note"><p class="gcode-note-title" style="color: rgb(255,255,255);">Notes</p>gcode-note-key</div>';
     var gcodeNoteLineFormat = '<p class="gcode-note-text">▶ gcode-note-line-key</p>';
 
+    htmlSrc = FormatDocument2(htmlSrc, "[gcode-page]", "[/gcode-page]", gcodePageFormat, "gcode-page-key");
     htmlSrc = FormatDocument2(htmlSrc, "[gcode-name]", "[/gcode-name]", " - ", gcodeNameFormat, "gcode-name-key", "gcode-title");
     htmlSrc = FormatDocument1(htmlSrc, "[gcode-subTitle]", "[/gcode-subTitle]", gcodeSubTitleFormat, "gcode-subTitle-key");
     htmlSrc = FormatDocument1(htmlSrc, "[description-text]", "[/description-text]", gcodeDescriptionTextFormat, "gcode-description-text-key");
