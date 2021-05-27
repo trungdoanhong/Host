@@ -23,7 +23,7 @@ function FormatGcodePage(className)
     var gcodeNoteFormat = '<div class="border rounded gcode-note"><p class="gcode-note-title" style="color: rgb(255,255,255);">Notes</p>gcode-note-key</div>';
     var gcodeNoteLineFormat = '<p class="gcode-note-text">▶ gcode-note-line-key</p>';
 
-    htmlSrc = FormatDocument2(htmlSrc, "[gcode-page]", "[/gcode-page]", gcodePageFormat, "gcode-page-key");
+    htmlSrc = FormatDocument1(htmlSrc, "[gcode-page]", "[/gcode-page]", gcodePageFormat, "gcode-page-key");
     htmlSrc = FormatDocument2(htmlSrc, "[gcode-name]", "[/gcode-name]", " - ", gcodeNameFormat, "gcode-name-key", "gcode-title");
     htmlSrc = FormatDocument1(htmlSrc, "[gcode-subTitle]", "[/gcode-subTitle]", gcodeSubTitleFormat, "gcode-subTitle-key");
     htmlSrc = FormatDocument1(htmlSrc, "[description-text]", "[/description-text]", gcodeDescriptionTextFormat, "gcode-description-text-key");
