@@ -89,6 +89,7 @@
 {
     background-color: #c1deff;
     color: rgb(0,91,191);
+    min-width: max-content;
 }
 
 .gcode-note
